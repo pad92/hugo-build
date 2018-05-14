@@ -1,7 +1,7 @@
 FROM alpine:3.5
 MAINTAINER tilldettmering@gmail.com
 
-ENV HUGO_VERSION 0.40.3
+ARG HUGO_VERSION ${HUGO_VERSION} 
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
 
 # Install HUGO
