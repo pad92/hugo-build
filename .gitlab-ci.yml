@@ -15,7 +15,10 @@ build-master:
       --build-arg HUGO_VERSION="${HUGO_VERSION}"
       -t "$CI_REGISTRY_IMAGE" .
 
-    - docker push "$CI_REGISTRY_IMAGE"
+    - docker tag  "${CI_REGISTRY_IMAGE}" "${CI_REGISTRY_IMAGE}:${HUGO_VERSION}"
+    - docker push "${CI_REGISTRY_IMAGE}"
+    - docker push "${CI_REGISTRY_IMAGE}:${HUGO_VERSION}"
+
   only:
     - master
 
