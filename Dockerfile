@@ -11,5 +11,5 @@ RUN set -x && \
   tar xzf ${HUGO_BINARY} && \
   rm -r ${HUGO_BINARY} && \
   mv hugo /usr/bin && \
-  apk del wget ca-certificates && \
+  apk del wget && \
   rm /var/cache/apk/*
