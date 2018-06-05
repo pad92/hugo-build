@@ -13,6 +13,7 @@ build-master:
   script:
     - docker build --pull 
       --build-arg HUGO_VERSION="${HUGO_VERSION}"
+      --build-arg MINIFY_VERSION="${MINIFY_VERSION}"
       -t "$CI_REGISTRY_IMAGE" .
 
     - docker tag  "${CI_REGISTRY_IMAGE}" "${CI_REGISTRY_IMAGE}:${HUGO_VERSION}"
