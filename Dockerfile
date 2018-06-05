@@ -1,21 +1,9 @@
-FROM golang:1.9.6-alpine
+ROM alpine:3.7
 
-# https://github.com/gohugoio/hugo/releases
 ARG HUGO_VERSION
+ARG MINIFY_VERSION
 
-# Install HUGO
 RUN set -x && \
-  apk add --no-cache --update \
-          curl \
-          ca-certificates \
-          git && \
-  curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz | tar -xz hugo -C /usr/local/bin
-
-# Install Minify
-RUN go get -v -d github.com/tdewolff/minify/cmd/minify && \
-    CGO_ENABLED=0 go build -a -o /usr/local/bin/minify -installsuffix cgo github.com/tdewolff/minify/cmd/minify && \
-    rm -fr src/
-
-# Install Brotli
-RUN echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-    apk --update add --no-cache brotli
+  apk add --no-cache --update curl ca-certificates && \
+  curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz | tar -xz hugo -C /usr/local/bin && \
+  curl -L https://github.com/tdewolff/minify/releases/download/v${MINIFY_VERSION}/minify_${MINIFY_VERSION}_linux_386.tar.gz| tar -xz minify -C /usr/local/bin
