@@ -4,7 +4,7 @@ ENV MINIFY_PACKAGE="github.com/tdewolff/minify/cmd/minify"
 
 RUN apk add --no-cache git gcc libc-dev && \
     go get -v -d ${MINIFY_PACKAGE} && \
-    CGO_ENABLED=0 go build -a -o minify -installsuffix cgo -o /go/bin/minify github.com/tdewolff/minify/cmd/minify && \
+    CGO_ENABLED=0 go build -a -o /go/bin/minify -installsuffix cgo github.com/tdewolff/minify/cmd/minify && \
     /go/bin/minify --version
 
 FROM alpine:3.7
