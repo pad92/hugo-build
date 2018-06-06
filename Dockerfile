@@ -1,7 +1,7 @@
 FROM golang:1.10-alpine as builder
 
 ENV MINIFY_VERSION="v2.3.4"
-ENV MINIFY_PACKAGE="github.com/tdewolff/minify/cmd/minify"
+ENV MINIFY_PACKAGE="github.com/tdewolff/minify"
 
 RUN apk add --no-cache git gcc libc-dev && \
     go get ${MINIFY_PACKAGE} && \
