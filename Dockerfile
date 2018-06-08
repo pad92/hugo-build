@@ -20,5 +20,5 @@ RUN set -x && \
         curl \
         ca-certificates \
   && curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz | \
-             tar -xz hugo -C /usr/local/bin/
+        tar -xz hugo -C /usr/local/bin/
 
