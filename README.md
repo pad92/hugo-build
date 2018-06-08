@@ -34,6 +34,8 @@ https://github.com/tdewolff/minify/tree/v2.3.5/cmd/minify
 
 * Build website  
 ```/usr/local/bin/hugo```
+
 * Minify hugo content  
 ```/usr/local/bin/minify -r -o public/ public/```
+
 * Publish public/
