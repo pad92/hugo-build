@@ -15,9 +15,7 @@ build-master:
       --build-arg HUGO_VERSION="${HUGO_VERSION}"
       --build-arg MINIFY_VERSION="${MINIFY_VERSION}"
       -t "$CI_REGISTRY_IMAGE" .
-      
     - docker push "${CI_REGISTRY_IMAGE}"
-
   only:
     - master
 
@@ -25,12 +23,11 @@ build:
   stage: build
   script:
     - docker build --pull
-      --build-arg HUGO_VERSION="${HUGO_VERSION}"
+      --build-arg HUGO_VERSION="${$CI_COMMIT_TAG}"
       --build-arg MINIFY_VERSION="${MINIFY_VERSION}"
       -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_TAG" .
-
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_TAG"
-  except:
+  only:
     - master
   only:
     - tags
