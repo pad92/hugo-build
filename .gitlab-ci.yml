@@ -35,5 +35,9 @@ tags:
 
 trigger:
   stage: deploy
+  image:
+    name: alpine
+  before_script:
+    - apk add --no-cache curl
   script:
     - "curl -X POST -F token=${CI_NOTE_TOKEN} -F ref=${CI_NOTE_REF} ${CI_NOTE_TRIGGERURL}"
