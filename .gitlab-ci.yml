@@ -3,11 +3,6 @@
 #
 image: docker:latest
 
-stages:
-  - master
-  - tags
-  - trigger
-
 services:
   - docker:dind
 
