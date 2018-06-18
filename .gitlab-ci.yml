@@ -3,13 +3,18 @@
 #
 image: docker:latest
 
+stages:
+  - build_master
+  - build_tags
+  - trigger_build
+
 services:
   - docker:dind
 
 before_script:
   - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
 
-build-master:
+build_master:
   stage: build
   script:
     - docker build --pull 
@@ -20,7 +25,7 @@ build-master:
   only:
     - master
 
-build:
+build_tags:
   stage: build
   script:
     - docker build --pull
@@ -32,3 +37,8 @@ build:
     - master
   only:
     - tags
+
+trigger_build:
+  stage: deploy
+  script:
+    - "curl -X POST -F token=${CI_NOTE_TOKEN} -F ref=${CI_NOTE_REF} ${CI_NOTE_TRIGGERURL}"
