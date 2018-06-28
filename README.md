@@ -6,7 +6,7 @@ Docker image for building a site with hugo and minify
 
 | Variable             | Description             | Default   |
 |----------------------|-------------------------|-----------|
-| **`HUGO_VERSION`**   | Hugo version to build   | `0.42.1`  |
+| **`HUGO_VERSION`**   | Hugo version to build   | `0.42.2`  |
 | **`MINIFY_VERSION`** | Minify version to build | `2.3.5`   |
 
 
@@ -14,7 +14,7 @@ Docker image for building a site with hugo and minify
 
 ```sh
 docker build --pull 
-      --build-arg HUGO_VERSION='0.42.1'
+      --build-arg HUGO_VERSION='0.42.2'
       --build-arg MINIFY_VERSION='2.35'
       -t hugo-build .
 ```
