@@ -1,4 +1,4 @@
-FROM golang:1.10-alpine as builder
+FROM golang:alpine as builder
 ARG MINIFY_REPO="github.com/tdewolff/minify"
 ARG MINIFY_PACKAGE="cmd/minify"
 ARG MINIFY_VERSION="2.3.5"
