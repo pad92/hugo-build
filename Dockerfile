@@ -1,7 +1,20 @@
 FROM golang:alpine as builder
+
 ARG MINIFY_REPO="github.com/tdewolff/minify"
 ARG MINIFY_PACKAGE="cmd/minify"
 ARG MINIFY_VERSION="2.3.5"
+
+LABEL maintainer="Pascal A. <pascalito@gmail.com>" \
+      org.label-schema.url="https://github.com/pad92/hugo-build/blob/master/README.md" \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.version=$VERSION \
+      org.label-schema.vcs-url="https://github.com/pad92/hugo-build.git" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.docker.dockerfile="/Dockerfile" \
+      org.label-schema.description="Hugo on alpine docker image" \
+      org.label-schema.schema-version="1.0"
+
+
 RUN apk add --no-cache --update \
         git \
         gcc \
