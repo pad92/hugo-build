@@ -12,7 +12,7 @@ RUN apk add --no-cache --update \
   && cd /go ; CGO_ENABLED=0 go build -ldflags "-X main.Version=${MINIFY_VERSION}" -a -o /go/bin/minify -installsuffix cgo ${MINIFY_REPO}/${MINIFY_PACKAGE} \
   && /go/bin/minify --version
 
-FROM alpine:3.8
+FROM alpine:3.7
 COPY --from=builder /go/bin/minify /usr/local/bin/
 ARG HUGO_VERSION="0.42.2"
 RUN set -x && \
