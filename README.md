@@ -1,10 +1,6 @@
 # hugo-build
 
-[![Layers](https://images.microbadger.com/badges/image/pad92/hugo-build.svg)](https://microbadger.com/images/pad92/hugo-build)
-[![GitHub issues](https://img.shields.io/github/issues/pad92/docker-hugo-build.svg)](https://github.com/pad92/docker-hugo-build)
-[![Docker Automated build](https://img.shields.io/docker/automated/pad92/hugo-build.svg?maxAge=2592000)](https://hub.docker.com/r/pad92/hugo-build/)
-[![Docker Build Status](https://img.shields.io/docker/build/pad92/hugo-build.svg?maxAge=2592000)](https://hub.docker.com/r/pad92/hugo-build/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/pad92/hugo-build.svg)](https://hub.docker.com/r/pad92/hugo-build/)
+[![Layers](https://images.microbadger.com/badges/image/pad92/hugo-build.svg)](https://microbadger.com/images/pad92/hugo-build) [![GitHub issues](https://img.shields.io/github/issues/pad92/docker-hugo-build.svg)](https://github.com/pad92/docker-hugo-build) [![Docker Automated build](https://img.shields.io/docker/automated/pad92/hugo-build.svg?maxAge=2592000)](https://hub.docker.com/r/pad92/hugo-build/) [![Docker Build Status](https://img.shields.io/docker/build/pad92/hugo-build.svg?maxAge=2592000)](https://hub.docker.com/r/pad92/hugo-build/) [![Docker Pulls](https://img.shields.io/docker/pulls/pad92/hugo-build.svg)](https://hub.docker.com/r/pad92/hugo-build/)
 
 Docker image for building a site with hugo and minify
 
