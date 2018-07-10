@@ -27,7 +27,7 @@ RUN apk add --no-cache --update \
 
 FROM alpine:3.8
 COPY --from=builder /go/bin/minify /usr/local/bin/
-ARG HUGO_VERSION="0.42.2"
+ARG HUGO_VERSION="0.43"
 RUN set -x && \
   apk add --no-cache --update \
         curl \
