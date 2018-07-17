@@ -31,6 +31,7 @@ ARG HUGO_VERSION="0.44"
 RUN set -x && \
   apk add --no-cache --update \
         curl \
+        git \
         ca-certificates \
   && curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz | \
         tar -xz hugo -C /usr/local/bin/
