@@ -26,8 +26,18 @@ RUN apk add --no-cache --update \
   && /go/bin/minify --version
 
 FROM alpine:3.8
-COPY --from=builder /go/bin/minify /usr/local/bin/
 ARG HUGO_VERSION="0.44"
+LABEL maintainer="pad92" \
+      org.label-schema.url="https://github.com/pad92/hugo-build/blob/master/README.md" \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.version=$HUGO_VERSION \
+      org.label-schema.vcs-url="https://github.com/pad92/hugo-build.git" \
+      org.label-schema.vcs-ref=$BUILD_VCSREF \
+      org.label-schema.docker.dockerfile="/Dockerfile" \
+      org.label-schema.description="Hugo, Minify, Git with alpine for you" \
+      org.label-schema.schema-version="1.0"
+
+COPY --from=builder /go/bin/minify /usr/local/bin/
 RUN set -x && \
   apk add --no-cache --update \
         curl \
