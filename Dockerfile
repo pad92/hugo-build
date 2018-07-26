@@ -14,7 +14,6 @@ LABEL maintainer="Pascal A. <pascalito@gmail.com>" \
       org.label-schema.description="Hugo on alpine docker image" \
       org.label-schema.schema-version="1.0"
 
-
 RUN apk add --no-cache --update \
         git \
         gcc \
@@ -26,7 +25,7 @@ RUN apk add --no-cache --update \
   && /go/bin/minify --version
 
 FROM alpine:3.8
-ARG HUGO_VERSION="0.45"
+ARG HUGO_VERSION="0.45.1"
 LABEL maintainer="pad92" \
       org.label-schema.url="https://github.com/pad92/hugo-build/blob/master/README.md" \
       org.label-schema.build-date=$BUILD_DATE \
