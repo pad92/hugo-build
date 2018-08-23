@@ -25,7 +25,7 @@ RUN apk add --no-cache --update \
   && /go/bin/minify --version
 
 FROM alpine:3.8
-ARG HUGO_VERSION="0.46"
+ARG HUGO_VERSION="0.47.1"
 LABEL maintainer="pad92" \
       org.label-schema.url="https://github.com/pad92/hugo-build/blob/master/README.md" \
       org.label-schema.build-date=$BUILD_DATE \
