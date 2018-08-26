@@ -23,7 +23,7 @@ tags:
   stage: build
   script:
     - docker build --pull
-      --build-arg HUGO_VERSION="${CI_COMMIT_TAG#*-}"
+      --build-arg HUGO_VERSION="${CI_COMMIT_TAG%%-*}"
       -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_TAG" .
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_TAG"
   only:
