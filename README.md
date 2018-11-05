@@ -8,7 +8,7 @@ Docker image for building a site with hugo
 
 | Variable             | Description             | Default   |
 |----------------------|-------------------------|-----------|
-| **`HUGO_VERSION`**   | Hugo version to build   | `0.49.2`  |
+| **`HUGO_VERSION`**   | Hugo version to build   | `0.50`    |
 
 
 ## Build Exemple
