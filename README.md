@@ -8,14 +8,14 @@ Docker image for building a site with hugo
 
 | Variable             | Description             | Default   |
 |----------------------|-------------------------|-----------|
-| **`HUGO_VERSION`**   | Hugo version to build   | `0.53`    |
+| **`HUGO_VERSION`**   | Hugo version to build   | `0.54`    |
 
 
 ## Build Exemple
 
 ```sh
 docker build --pull 
-      --build-arg HUGO_VERSION='0.53'
+      --build-arg HUGO_VERSION='0.54'
       -t hugo-build .
 ```
 
