@@ -17,5 +17,7 @@ RUN set -x && \
         optipng \
         jpegoptim \
         ca-certificates \
+        aws-cli \
+        py-pygments \
   && curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz | \
         tar -xz hugo -C /usr/local/bin/
